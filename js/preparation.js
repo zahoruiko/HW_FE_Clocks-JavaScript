@@ -2,6 +2,7 @@
 var styleSheet = document.createElement("style");
 // Вставляем в блок стайл импорт внешних шрифтов
 styleSheet.innerText = `@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');`;
+
 // Добавляем блок style в блок head
 document.head.appendChild(styleSheet);
 
@@ -34,7 +35,6 @@ timeContainerWrapper.style.khtmlUserSelect = "none"; // Konqueror
 timeContainerWrapper.style.mozUserSelect = "none"; // Firefox
 timeContainerWrapper.style.msUserSelect = "none"; //Internet Explorer/Edge
 timeContainerWrapper.style.userSelect = "none"; // Non-prefixed version, currently not supported by any browser
-
 
 // Добавляем блок в контейнер body
 document.body.appendChild(timeContainerWrapper);
