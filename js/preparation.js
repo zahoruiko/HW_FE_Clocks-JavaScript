@@ -25,6 +25,8 @@ timeContainerWrapper.style.border = "1px solid #009";
 timeContainerWrapper.style.borderRadius = "40px";
 // Определяем тени вокруг контейнера
 timeContainerWrapper.style.boxShadow = "0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, .8), 23px 0 20px -23px rgba(0, 0, 0, .8), 0 0 40px rgba(0, 0, 0, .1) inset";
+// Устанавливаем отображение курсора только в виде стрелки
+timeContainerWrapper.style.pointer = "initial";
 // Запрет выделения текста для разных браузеров
 timeContainerWrapper.style.webkitTouchCallout = "none"; // iOS Safari
 timeContainerWrapper.style.webkitUserSelect = "none"; // Chrome/Safari/Opera
@@ -32,6 +34,7 @@ timeContainerWrapper.style.khtmlUserSelect = "none"; // Konqueror
 timeContainerWrapper.style.mozUserSelect = "none"; // Firefox
 timeContainerWrapper.style.msUserSelect = "none"; //Internet Explorer/Edge
 timeContainerWrapper.style.userSelect = "none"; // Non-prefixed version, currently not supported by any browser
+
 
 // Добавляем блок в контейнер body
 document.body.appendChild(timeContainerWrapper);
