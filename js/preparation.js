@@ -1,34 +1,34 @@
-// Создаем блок style
+// Creating a style block
 var styleSheet = document.createElement("style");
-// Вставляем в блок стайл импорт внешних шрифтов
+// We insert the import of external fonts into the style block
 styleSheet.innerText = `@import url('https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap');`;
 
-// Добавляем блок style в блок head
+// Adding the style block to the head block
 document.head.appendChild(styleSheet);
 
-// Создается контейнер для размещения информации о текущем времени
+// A container is being created to place information about the current time
 let timeContainerWrapper = document.createElement('div');
-// Устанавливается уникальный идентификатор для этого элемента
+// A unique identifier is set for this element
 timeContainerWrapper.id = "timeContainer";
-// Вставляем в контейнер body контейнер "timeContainer" 
+// We insert the "timeContainer" container into the body container
 timeContainerWrapper.style.fontFamily = "'Syne Mono', monospace";
-// "Жирность" шрифта
+// "Fatness" of the font
 timeContainerWrapper.style.fontWeight = "bold";
-// Размер шрифта
+// Font Size
 timeContainerWrapper.style.fontSize = "45px";
-// Ширина блока
+// Block width
 timeContainerWrapper.style.width = "250px";
-// Внешние отступы от блока
+// External margins from the block
 timeContainerWrapper.style.margin = "100px 0 0 100px";
-// Цвет рамки контейнера
+// Container frame color
 timeContainerWrapper.style.border = "1px solid #009";
-// Радиус скругления углов контейнера
+// Radius of rounding the corners of the container
 timeContainerWrapper.style.borderRadius = "40px";
-// Определяем тени вокруг контейнера
+// Defining shadows around the container
 timeContainerWrapper.style.boxShadow = "0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, .8), 23px 0 20px -23px rgba(0, 0, 0, .8), 0 0 40px rgba(0, 0, 0, .1) inset";
-// Устанавливаем отображение курсора только в виде стрелки
+// We set the cursor display only in the form of an arrow
 timeContainerWrapper.style.pointer = "initial";
-// Запрет выделения текста для разных браузеров
+// Prohibiting text selection for different browsers
 timeContainerWrapper.style.webkitTouchCallout = "none"; // iOS Safari
 timeContainerWrapper.style.webkitUserSelect = "none"; // Chrome/Safari/Opera
 timeContainerWrapper.style.khtmlUserSelect = "none"; // Konqueror
@@ -36,82 +36,82 @@ timeContainerWrapper.style.mozUserSelect = "none"; // Firefox
 timeContainerWrapper.style.msUserSelect = "none"; //Internet Explorer/Edge
 timeContainerWrapper.style.userSelect = "none"; // Non-prefixed version, currently not supported by any browser
 
-// Добавляем блок в контейнер body
+// Adding a block to the body container
 document.body.appendChild(timeContainerWrapper);
 
-// Подключаемся к созданному элементу, чтобы добавить в него вложенные блоки
+// Connecting to the created element to add nested blocks to it
 var timeContainer = document.getElementById('timeContainer');
 
-// Создаем блок для размещения текста-заголовка часов
+// Creating a block for placing the text-the title of the clock
 var clockHeader = document.createElement('div');
-// Устанавливается уникальный идентификатор для этого элемента
+// A unique identifier is set for this element
 clockHeader.id = 'clockHeader';
-// Вставляем необходимый текст в этот блок
+// We insert the necessary text into this block
 clockHeader.innerHTML = "Current time:";
-// Тень позади текста
+// Shadow behind the text
 clockHeader.style.textShadow = "3px 5px 3px #c8daf5";
-// Цвет шрифта
+// Font color
 clockHeader.style.color = "#008";
-// Размер шрифта
+// Font Size
 clockHeader.style.fontSize = "25px";
-// Выравнивание текста
+// Text alignment
 clockHeader.style.textAlign = "center";
-// Внешний отступ от блока сверху
+// External indentation from the top of the block
 clockHeader.style.marginTop = "10px";
 
-// Вставляем блок в контейнер "timeContainer"
+// Inserting the block into the "timeContainer" container
 timeContainer.appendChild(clockHeader);
 
 var clock = document.createElement('div');
-// Устанавливается уникальный идентификатор для этого элемента
+// Inserting the block into the "timeContainer" container
 clock.id = 'clock';
-// Цвет текста
+// Text color
 clock.style.color = "#009";
-// Выраванивание текста
+// Text alignment
 clock.style.textAlign = "center";
 
-// Вставляем элемент в контейнер "timeContainer"
+// Inserting the element into the "timeContainer" container
 timeContainer.appendChild(clock);
 
 var dayOfWeek = document.createElement('div');
-// Устанавливается уникальный идентификатор для этого элемента
+// A unique identifier is set for this element
 dayOfWeek.id = 'dayOfWeek';
-// Цвет шрифта
+// Font color
 dayOfWeek.style.color = "#008";
-// Размер шрифта
+// Font size
 dayOfWeek.style.fontSize = "30px";
-// Выравнивание текста
+// Text alignment
 dayOfWeek.style.textAlign = "center";
-// Отступ внутри блока
+// Indentation inside the block
 dayOfWeek.style.padding = "0 10px";
-// Внешний отступ вокруг блока 
+// External indentation around the block 
 dayOfWeek.style.margin = "15px 0 15px 0";
 
-// Вставляем элемент в контейнер "timeContainer"
+// Inserting the element into the "timeContainer" container
 timeContainer.appendChild(dayOfWeek);
 
-// Находим блок dayOfWeek, чтобы вложить в него обертку для текста дня недели
+// We find the DayOfWeek block to put a wrapper for the text of the day of the week in it
 var dayOfWeekContainer = document.getElementById('dayOfWeek');
 
-// Создаем обертку для текста дня недели
+// Creating a wrapper for the text of the day of the week
 var dayOfWeekWrapper = document.createElement('span');
-// Идентификатор блока
+// Block ID
 dayOfWeekWrapper.id = 'dayOfWeekWrapper';
-// Рамка блока
+// Block border
 dayOfWeekWrapper.style.border = "1px solid #4c7ad5";
-// Радиус углов блока
+// Radius of the corners of the block
 dayOfWeekWrapper.style.borderRadius = "30px";
-// Отступы внутри блока
+// Margins inside the block
 dayOfWeekWrapper.style.padding = "0 10px";
 dayOfWeekWrapper.style.margin = "10px 0";
-// Цвет фона блока
+// Block background color
 dayOfWeekWrapper.style.background = "#4c7ad5";
-// Цвет текста блока
+// Block text color
 dayOfWeekWrapper.style.color = "#fff";
-// Тень вокруг блока
+// Shadow around the block
 dayOfWeekWrapper.style.boxShadow = "0 1px 4px rgba(0, 0, 0, 1), -23px 0 20px -23px rgba(0, 0, 0, .8), 23px 0 20px -23px rgba(0, 0, 0, .8), 0 0 40px rgba(0, 0, 0, .1) inset";
-// Тень вокруг текста
+// Shadow around the text
 dayOfWeekWrapper.style.textShadow = "0px 0 #009, 0 1px #009, 1px 0 #009, 0 0px #009";
 
-// Добавляем блок в родительский
+// Adding a block to the parent
 dayOfWeekContainer.appendChild(dayOfWeekWrapper);
